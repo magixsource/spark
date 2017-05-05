@@ -1,0 +1,87 @@
+<#assign title>	
+	${domain!''}
+</#assign>
+<#assign body>
+<div class="container">
+
+	<#include "/app/${domain}/layout/blog-header.html" />
+      
+	<#list posts as post>
+	<div class="row">
+		<div class="col-sm-8 blog-main">
+			<div class="blog-post">
+				<h2 class="blog-post-title"><a href="/${domain}/post/${post.id}">${post.title}</a></h2>
+            	<p class="blog-post-meta">Published on the ${post.createTime}</p>
+            	<p>${post.summary!''}</p>
+            	<hr>
+			</div>
+		</div>
+		
+	</div>
+	</#list>
+	<input type="date">
+	<input type="datetime">
+	<input type="number" min="1" max="10">
+	<input type="url">
+	email <input type="email" multiple="multiple">
+	<input type="range" min="1" max="10" width="20">
+	<input type="search">
+	<input type="color">
+	<details>
+		才不是这个样子呢才不是这个样子呢才不是这个样子呢才不是这个样子呢才不是这个样子呢
+		才不是这个样子呢才不是这个样子呢才不是这个样子呢才不是这个样子呢才不是这个样子呢
+		才不是这个样子呢才不是这个样子呢才不是这个样子呢才不是这个样子呢才不是这个样子呢
+	</details>
+	<meter value="9"  min="0" max="10">Height</meter>
+	
+	<progress>
+		<span>75</span>%
+	</progress>
+	
+	<ruby>
+		我的天啊
+		<rt>
+			Meoao骄傲
+		</rt>
+	</ruby>
+	
+	<time>9:30</time>
+	<time datetime="2:39">这个时间</time>
+	
+	
+	<a href="#"  ping="http://linpeng.hnisi.com.cn:4567/blog/post/2">Test</a>
+	
+	
+	<input type="button" value="Gank"  id="gank"/>
+	<div id="div1"></div>
+	
+	<script type="text/javascript">
+	
+		console.log(document.querySelector("input#gank"));
+		console.log(document.querySelectorAll("input"));
+		window.onload = function(){
+			var input = document.getElementById("gank");
+			var div = document.getElementById("div1");
+			
+			input.onclick = function(){
+				var number = randomNum();
+				div.innerHTML = number;
+				history.pushState(number,'');
+			};
+			
+			window.onpopstate = function(ev){  //历史管理改变，就会触发
+		         
+		        var number = ev.state || '';
+		 
+		        div.innerHTML = number;
+		         
+		    };
+			
+			function randomNum(alls,now){
+				return Math.random();
+			};
+		};
+	</script>
+</div>
+</#assign>
+<#include "/app/${domain}/layout/main.html" />

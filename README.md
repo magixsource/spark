@@ -1,0 +1,3 @@
+Spark
+=
+此工程继承了Micro-core的插件开发思想，并基于Spark-framework以及jOOQ，进一步加速Web工程的开发速度。使得开发速度快的同时，系统的扩展性也非常优秀。这其中包含了一个示例FCModule，有action、view和route。工程并没有实现所有功能，但我认为思想是传递到位了，希望对大家有所帮助。

@@ -1,0 +1,10 @@
+<div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+        	<a class="blog-nav-item active" href="/${domain}/index">主页</a>
+	        <#list category as cat>
+	        		<a class="blog-nav-item" href="/${domain}/${cat.name}">${cat.remark}</a>
+	        </#list>
+        </nav>
+      </div>
+</div>
